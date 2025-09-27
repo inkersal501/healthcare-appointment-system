@@ -1,0 +1,17 @@
+import dotenv from "dotenv";
+dotenv.config(); 
+
+export const {
+  APP_PORT,
+  JWT_ACCESS_TOKEN,
+  JWT_REFRESH_TOKEN,
+  JWT_ACCESS_EXPIRATION,
+  JWT_REFRESH_EXPIRATION,
+  MONGODB_URI,
+  POSTGRESQL_USER,
+  POSTGRESQL_PASSWORD,
+  POSTGRESQL_DATABASE,
+  POSTGRESQL_HOST,
+  POSTGRESQL_PORT,
+} = process.env; 
+ 
