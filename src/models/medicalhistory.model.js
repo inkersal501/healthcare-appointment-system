@@ -8,7 +8,7 @@ const MedicalHistorySchema = new Schema({
         notes: { type : String, required: true },
         prescriptions: { type : Types.ObjectId, ref : "Prescriptions" },
     }]
-});
+}, {timestamps: true});
 
 const MedicalHistory = model("MedicalHistory", MedicalHistorySchema, "medical_history");
 export default MedicalHistory;

@@ -6,3 +6,5 @@ const {getDoctors, updateAvailability} = doctorController;
 
 router.get("/", getDoctors);
 router.post("/availability", updateAvailability);
+
+export default router;

@@ -8,7 +8,7 @@ const PrescriptionsSchema = new Schema({
         dosage: { type: String, required: true }, 
         duration: { type: String, required: true }, 
     }],
-});
+}, {timestamps: true});
 
 const Prescriptions = model("Prescriptions", PrescriptionsSchema, "prescriptions");
 export default Prescriptions;

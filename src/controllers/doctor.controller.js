@@ -9,7 +9,7 @@ export const getDoctors = async (req, res) => {
             data : doctors
         });
     } catch (error) {
-        res.json({
+        res.status(500).json({
             success: false,
             message : error.message
         });
@@ -24,7 +24,7 @@ export const updateAvailability = async (req, res) => {
             message : "Doctor's availability updated successfully."
         });
     } catch (error) {
-        res.json({
+        res.status(500).json({
             success: false,
             message : error.message
         });
