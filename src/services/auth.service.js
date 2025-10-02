@@ -1,7 +1,7 @@
 import pool from "../config/pg.js";
 import bcrypt from "bcryptjs";
 
-const checkUser = async (email) => {
+export const checkUser = async (email) => {
   try {
     const result = await pool.query("SELECT * FROM users WHERE email = $1 LIMIT 1",[email]);
     return result.rows[0] || null; 

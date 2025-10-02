@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
-import { JWT_ACCESS_SECRET, JWT_REFRESH_SECRET, JWT_ACCESS_EXPIRATION, JWT_REFRESH_EXPIRATION } from "../index.js";
+import { JWT_ACCESS_SECRET, JWT_REFRESH_SECRET, JWT_ACCESS_EXPIRATION, JWT_REFRESH_EXPIRATION } from "../config/index.js";
   
-const generateAccessToken = (user) => {
+export const generateAccessToken = (user) => {
   return jwt.sign(
     { id: user.id, email: user.email },  
     JWT_ACCESS_SECRET,
@@ -9,7 +9,7 @@ const generateAccessToken = (user) => {
   );
 };
  
-const generateRefreshToken = (user) => {
+export const generateRefreshToken = (user) => {
   return jwt.sign(
     { id: user.id, email: user.email },
     JWT_REFRESH_SECRET,
@@ -17,7 +17,7 @@ const generateRefreshToken = (user) => {
   );
 };
  
-const verifyAccessToken = (token) => {
+export const verifyAccessToken = (token) => {
   try {
     return jwt.verify(token, JWT_ACCESS_SECRET);
   } catch (error) {
@@ -25,12 +25,11 @@ const verifyAccessToken = (token) => {
   }
 };
  
-const verifyRefreshToken = (token) => {
+export const verifyRefreshToken = (token) => {
   try {
     return jwt.verify(token, JWT_REFRESH_SECRET);
   } catch (error) {
     return null;
   }
 };
-
-export default {generateAccessToken, generateRefreshToken, verifyAccessToken, verifyRefreshToken};
+ 

@@ -13,5 +13,6 @@ export const {
   POSTGRESQL_DATABASE,
   POSTGRESQL_HOST,
   POSTGRESQL_PORT,
+  NODE_ENV
 } = process.env; 
  
