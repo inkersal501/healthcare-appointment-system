@@ -9,6 +9,7 @@ import { pgConnection } from "./config/pg.js";
 import routes from "./routes/index.js";
 
 const app = express();
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({ origin: "*", credentials: true }));
