@@ -31,7 +31,7 @@ export const getAppointments = async (doctorId) => {
             JOIN patients p ON p.userId = a.patientId 
             JOIN users u ON u.id = a.patientId
             JOIN payments py ON py.id= a.paymentId
-            WHERE u.role='patient' AND a.doctorId=$1 AND a.date = $2`, [doctorId, todayDate]);
+            WHERE u.role='patient' AND a.doctorId=$1 AND a.date = $2 AND a.status!='cancelled'`, [doctorId, todayDate]);
         return result.rows;
     } catch (error) {
         throw new Error("Error getting appointments. Please try again.");
